@@ -9,8 +9,11 @@
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-<!--                <property name="fastJsonConfig" ref=""></property>-->
+                <property name="fastJsonConfig" ref="fastJsonConfig"></property>
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    <bean id="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">
+        <property name="dateFormat" value="yyyy-MM-dd hh-mm-ss"/>
+    </bean>
 </beans>
